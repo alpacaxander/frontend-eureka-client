@@ -1,6 +1,6 @@
 eureka:
   instance:
-    preferIpAddress: true
+    preferIpAddress: ${PREFER_IP_ADDRESS:true}
   client:
     registerWithEureka: true
     fetchRegistry: true
@@ -11,7 +11,7 @@ spring:
   application:
     name: ${SPRING_APPLICATION_NAME:frontend}
   resources:
-    static-locations: file:/client/files
+    static-locations: file:${STATIC_LOCATIONS:/files}
 
 server:
   port: ${PORT:80}
